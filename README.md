@@ -8,6 +8,10 @@
 
 
 
+![](./diagrama.png)
+
+
+
 ## Regras e testes
 
 Status:
@@ -78,8 +82,71 @@ Status:
 
 
 
-## Tecnologias
+## Pré-requisitos
+
+Antes de iniciar, certifique-se de ter as seguintes ferramentas instaladas:
+
+- .NET SDK `8.0.204`
+- Docker `26.0.1`
+- Docker Compose `v2.26.1`
 
 
 
-## Como executar o projeto
+## Bibliotecas Utilizadas
+
+- `Ardalis.GuardClauses`: Garante pré-condições nos métodos.
+- `FluentResults`: Fornece uma maneira de retornar resultados ou erros.
+- `FluentValidation`: Permite a criação de regras de validação.
+- `JetBrains.Annotations`: Fornece anotações de código para melhorar a análise estática.
+- `Mapster`: Mapeamento de objetos.
+- `MediatR`: Implementação do padrão Mediator para desacoplamento.
+- `RabbitMQ.Client`: Cliente AMQP para interagir com RabbitMQ.
+- `Serilog`: Logging.
+- `Serilog.Sinks.Seq`: Sink do Serilog para o Seq.
+- `Carter`: Biblioteca para roteamento e vinculação de solicitações HTTP.
+- `Spectre.Console`: facilita a criação de interfaces de usuário interativas e ricas em aplicativos de console. 
+
+
+
+## Testes Unitários
+
+Bibliotecas utilizadas para testes unitários:
+
+- `FakeItEasy`: Criação de objetos falsos para testes.
+- `FluentAssertions`: Assertivas fluentes para testes.
+- `xunit`: Framework de testes.
+
+
+
+## Ferramentas Utilizadas
+
+- Typora
+- Rider no Linux PopOs I3wm
+- VsCode 
+- Visual Studio No Windows
+- app.eraser.io
+
+
+
+
+
+
+
+## Teste das APIs
+
+As APIs podem ser testadas através de:
+
+- Arquivos .http: dentro do proprio diretorio do endpoint
+  - tarefas.http
+- Postman: arquivos json estão aqui no respositorio
+  - collections.json env.json
+- Cliente Web através de um arquivo HTML estático: https://locahost:7000/api.html
+
+| API        | Endpoint                      | Docker |
+| ---------- | ----------------------------- | ------ |
+| Tarefas    | https://locahost:7000/tarefas | 8000   |
+|            |                               |        |
+| UI RabbiMQ | Localhost:15672               |        |
+| UI Seq     | Localhost:5341                |        |
+| Postgres   | localhost:                    |        |
+
